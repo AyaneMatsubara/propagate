@@ -9,7 +9,7 @@
       slides.removeClass("current").eq(count).addClass("current");
     }
     
-    setInterval(toggle_slide, 10000);
+    setInterval(toggle_slide, 7000);
 
   });
 

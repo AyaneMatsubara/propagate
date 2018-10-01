@@ -18,6 +18,7 @@
   	var two = $("#para2");
   	var three = $("#para3");
   	var four = $("#para4");
+  	var header = $("#header");
   	var w = $(window);
 
   	w.scroll(function(){
@@ -26,22 +27,33 @@
     	two.css("top", h / 30 + "px");
     	three.css("top", h / 30 + "px");
     	four.css("top", h / 30 + "px");
+    	header.css("opacity", 1- (h / 5000));
   	});
   });
   
+  /*$(function() {
+  	let to-form = $('#to-form');
+  	var w =$(window);
+  	
+  	w.scroll(function(){
+    	var h = w.scrollTop();
+    	to-form.css("opacity", 0 + (h/1000));
+  	});
+  });*/
+  
 	$(function() {
-  	var appear = false;
-  	var pagetop = $('#page-top');
+  	let appear = false;
+  	let pagetop = $('#page-top');	
   	$(window).scroll(function () {
-    	if ($(this).scrollTop() > 1500) {  //100pxスクロールしたら
+    	if ($(this).scrollTop() > 1200) {  //100pxスクロールしたら
       	if (appear == false) {
         	appear = true;
-        	pagetop.stop().animate({'right': '50px'}, 300); //0.3秒かけて現れる
+        	pagetop.stop().animate({'right': '50px'}, 300); //0.3秒かけて現れる    	
       	}
     	}else{
       	if (appear) {
         	appear = false;
-        	pagetop.stop().animate({'right': '-100px'}, 300); //0.3秒かけて隠れる
+        	pagetop.stop().animate({'right': '-100px'}, 300); //0.3秒かけて隠れる  	
       	}
     	}
   	});
@@ -50,7 +62,18 @@
     		return false;
   		});
 	});
-
+	
+	$(function(){
+  	$('a[href^="#"]').click(function() {
+    	var speed = 750;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      	return false;
+    });
+  });
+  
 })(jQuery);
 
 	

@@ -2,23 +2,28 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title>CSS3+jQuery</title>
-    <link rel="stylesheet" href="slideshow.css">
+    <title>Propagate</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="slideshow.js"></script>
   </head>
   <body>
-  	<header class="header">
+  	<header class="header" id="header">
   		<img class="header__logo" src="images/logo.png">
   	</header>
   	
   	<div class="mainvis">
     	<ul id="slideshow">
+    		<h1 class="ttl--wh">あなたの「好き！」を応援する<br>オタ活サポートサービス<br><span>Propagate</span>
+    			<span class="ruby">プロパゲート</span><br></h1>
       	<li class="current"><img src="images/cake.jpg"></li>
       	<li><img src="images/cosme.jpg"></li>
       	<li><img src="images/figure.jpg"></li>
       	<li><img src="images/laptop-girl.jpg"></li>
     	</ul>
+    	<a href="#form" class="btn btn--top">会員登録はこちら</a>
 		</div>
 		
 		<section class="txtarea--pu">
@@ -118,10 +123,10 @@
 					定員：50名（Propagate会員証の提示が必要です）</p>
 				</div>
 			</div>
-			<a class="btn btn--wh">ご予約はこちらから！</a>
+			<a href="#form" class="btn btn--wh">ご予約はこちらから！</a>
 		</section>
 					
-		<section class="sec sec-04">
+		<section class="sec sec-04" id="form">
 			<h2 class="sec__ttl sec-01__ttl">・ 会員登録フォーム ・</h2>
 			<table class="sec-04__form">
 				<tr>
@@ -149,9 +154,21 @@
 					<td></td>
 					<td><input type="text"></td>
 				</tr>
+				<tr>
+					<td class="form__item">布教モード off/on</td>
+					<td><span class="form__required">必須</span></td>
+					<td>
+						<div class="toggle-switch special">
+      				<input type="checkbox" id="toggle4" class="button" />
+      				<label for="toggle4" class="border">toggle button</label>
+    				</div>
+					</td>
+				</tr>
 			</table>
 			<a class="btn btn--pu">次の設定に進む</a>
 		</section>
+		
+		<a id="to-form" class="to-form" href="#form">Join to Propagate!</a>
 		
 		<img id="page-top" src="images/page-top.png">
 		
